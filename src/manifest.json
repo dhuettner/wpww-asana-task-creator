@@ -11,7 +11,12 @@
     "tabs"
   ],
   "host_permissions": [
-    "https://app.asana.com/*"
+    "https://app.asana.com/*",
+    "https://api.openai.com/*",
+    "https://api.anthropic.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://*/*",
+    "http://*/*"
   ],
   "action": {
     "default_popup": "popup.html",

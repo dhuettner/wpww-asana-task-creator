@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const ticketPrefixInput = document.getElementById('ticket-prefix');
   const lastTicketIdInput = document.getElementById('last-ticket-id');
   const priorityFieldSelect = document.getElementById('priority-field');
+  const aiProviderSelect = document.getElementById('ai-provider');
+  const aiApiKeyInput = document.getElementById('ai-api-key');
+  const includeImagesSelect = document.getElementById('include-images');
+  const debugModeCheckbox = document.getElementById('debug-mode');
   const saveButton = document.getElementById('save-settings');
   const statusEl = document.getElementById('status');
 
@@ -22,7 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
     'ticketPrefix', 
     'lastTicketId',
     'priorityFieldId',
-    'customFields'
+    'customFields',
+    'aiProvider',
+    'aiApiKey',
+    'includeImages',
+    'debugMode'
   ], function(data) {
     if (data.accessToken) {
       accessTokenInput.value = data.accessToken;
@@ -47,6 +55,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (data.priorityFieldId && data.customFields) {
       priorityFieldSelect.value = data.priorityFieldId;
+    }
+    
+    // Load AI provider settings
+    if (data.aiProvider) {
+      aiProviderSelect.value = data.aiProvider;
+    }
+    
+    if (data.aiApiKey) {
+      aiApiKeyInput.value = data.aiApiKey;
+    }
+    
+    if (data.includeImages) {
+      includeImagesSelect.value = data.includeImages;
+    } else {
+      includeImagesSelect.value = 'never'; // Default-Wert
+    }
+    
+    // Debug-Modus laden
+    if (data.debugMode) {
+      debugModeCheckbox.checked = data.debugMode;
     }
   });
 
@@ -78,6 +106,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const ticketPrefix = ticketPrefixInput.value.trim();
     const lastTicketId = parseInt(lastTicketIdInput.value, 10) || 999;
     const priorityFieldId = priorityFieldSelect.value;
+    const aiProvider = aiProviderSelect.value;
+    const aiApiKey = aiApiKeyInput.value.trim();
+    const includeImages = includeImagesSelect.value;
+    const debugMode = debugModeCheckbox.checked;
 
     if (!isAuthenticated) {
       showStatus('Bitte überprüfen Sie zuerst Ihren Token', 'error');
@@ -88,13 +120,23 @@ document.addEventListener('DOMContentLoaded', function() {
       showStatus('Bitte wählen Sie einen Workspace', 'error');
       return;
     }
+    
+    // Validiere API-Key, wenn ein Provider ausgewählt wurde
+    if (aiProvider && !aiApiKey) {
+      showStatus('Bitte geben Sie einen API-Schlüssel für den ausgewählten KI-Anbieter ein', 'error');
+      return;
+    }
 
     // Save settings to chrome.storage
     chrome.storage.sync.set({
       'workspace': workspaceId,
       'ticketPrefix': ticketPrefix,
       'lastTicketId': lastTicketId,
-      'priorityFieldId': priorityFieldId
+      'priorityFieldId': priorityFieldId,
+      'aiProvider': aiProvider,
+      'aiApiKey': aiApiKey,
+      'includeImages': includeImages,
+      'debugMode': debugMode
     }, function() {
       showStatus('Einstellungen wurden erfolgreich gespeichert', 'success');
     });

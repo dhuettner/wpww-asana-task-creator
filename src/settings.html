@@ -150,6 +150,46 @@
     </div>
   </div>
   
+  <div class="section">
+    <h2>KI-Integration</h2>
+    <p class="hint">Ermöglicht die automatische Zusammenfassung und Beschreibungsgenerierung für Tickets.</p>
+    
+    <div class="form-group">
+      <label for="ai-provider">KI-Anbieter:</label>
+      <select id="ai-provider">
+        <option value="">-- Keine KI-Integration aktivieren --</option>
+        <option value="openai">OpenAI (ChatGPT)</option>
+        <option value="claude">Anthropic (Claude)</option>
+        <option value="gemini">Google (Gemini)</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="ai-api-key">API-Schlüssel:</label>
+      <input type="password" id="ai-api-key" placeholder="Ihr API-Schlüssel für den ausgewählten KI-Anbieter">
+      <div class="hint">Ihr API-Schlüssel wird nur lokal in Ihrer Browser-Erweiterung gespeichert.</div>
+    </div>
+    
+    <div class="form-group">
+      <label for="include-images">Bilder einbinden:</label>
+      <select id="include-images">
+        <option value="never">Niemals</option>
+        <option value="ask">Mit Bildauswahl</option>
+        <option value="always">Immer alle</option>
+      </select>
+      <div class="hint">Legt fest, ob und wie Bilder aus E-Mails als Anhänge hinzugefügt werden sollen.</div>
+    </div>
+    
+    <div class="form-group">
+      <label for="debug-mode">Entwickler-Modus:</label>
+      <div style="display: flex; align-items: center;">
+        <input type="checkbox" id="debug-mode" style="width: auto; margin-right: 8px;">
+        <span>Debug-Modus aktivieren</span>
+      </div>
+      <div class="hint">Zeigt zusätzliche Informationen zur Fehlerbehebung an. Nur für Entwickler.</div>
+    </div>
+  </div>
+  
   <button id="save-settings">Einstellungen speichern</button>
   
   <div id="status" class="status"></div>
