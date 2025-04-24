@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WPWW Asana Task Creator - Einstellungen</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 500px;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin-top: 0;
+      color: #333;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #4573D5;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #3a63c2;
+    }
+    button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+    .auth-button {
+      width: 100%;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .auth-status {
+      margin-top: 10px;
+      font-style: italic;
+      color: #666;
+    }
+    .status {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+      display: block;
+    }
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+      display: block;
+    }
+    .instructions {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      font-size: 0.9em;
+      line-height: 1.5;
+    }
+    .hint {
+      font-size: 0.85em;
+      color: #666;
+      margin-top: 5px;
+    }
+    .section {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Einstellungen</h1>
+  
+  <div class="instructions">
+    <p><strong>Anleitung:</strong> Um diese Erweiterung nutzen zu können, benötigen Sie einen Persönlichen Zugriffstoken von Asana.</p>
+    <ol>
+      <li>Besuchen Sie <a href="https://app.asana.com/0/my-access-tokens" target="_blank">Asana Access Token Seite</a></li>
+      <li>Klicken Sie auf "Neues Token erstellen"</li>
+      <li>Geben Sie einen Namen für das Token ein, z.B. "WPWW Task Creator"</li>
+      <li>Kopieren Sie das generierte Token (wird nur einmal angezeigt!)</li>
+    </ol>
+  </div>
+  
+  <div class="section">
+    <div class="form-group">
+      <label for="access-token">Persönlicher Zugriffstoken:</label>
+      <input type="password" id="access-token" placeholder="Ihr Asana Persönlicher Zugriffstoken">
+      <div class="hint">Ihr Token wird nur lokal in Ihrer Browser-Erweiterung gespeichert.</div>
+    </div>
+  
+    <div class="form-group">
+      <button id="authorize" class="auth-button">Token überprüfen</button>
+      <div id="auth-status" class="auth-status"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="workspace">Workspace:</label>
+      <select id="workspace" disabled>
+        <option value="">-- Zuerst bei Asana anmelden --</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Ticket-ID Einstellungen</h2>
+    
+    <div class="form-group">
+      <label for="ticket-prefix">Ticket-Präfix:</label>
+      <input type="text" id="ticket-prefix" placeholder="z.B. WPWW-" value="WPWW-">
+    </div>
+    
+    <div class="form-group">
+      <label for="last-ticket-id">Letzte Ticket-ID:</label>
+      <input type="number" id="last-ticket-id" placeholder="z.B. 999" value="999">
+      <div class="hint">Die nächste Ticket-ID wird WPWW-1000 sein</div>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Benutzerdefinierte Felder</h2>
+    <div class="form-group">
+      <label for="priority-field">Prioritätsfeld:</label>
+      <select id="priority-field">
+        <option value="">-- Wählen Sie ein Feld --</option>
+      </select>
+      <div class="hint">Optional: Wählen Sie das benutzerdefinierte Feld für die Priorität</div>
+    </div>
+  </div>
+  
+  <button id="save-settings">Einstellungen speichern</button>
+  
+  <div id="status" class="status"></div>
+  
+  <script src="settings.js"></script>
+</body>
+</html>
