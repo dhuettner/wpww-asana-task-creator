@@ -74,3 +74,48 @@ Falls Probleme auftreten:
 - `storage`: Lokale Speicherung von Einstellungen und Ticket-IDs
 - `contextMenus`: Zum Hinzufügen des Kontextmenüs
 - `host_permissions` für `https://app.asana.com/*`: Für API-Aufrufe an Asana
+
+## Technische Details
+
+Diese Chrome-Erweiterung nutzt:
+- Chrome Extension Manifest V3
+- Asana REST API
+- JavaScript (ES6+)
+- Chrome Storage API
+
+## Support
+
+Bei Fragen oder Problemen haben Sie folgende Möglichkeiten:
+- Erstellen Sie ein Issue auf [GitHub](https://github.com/dhuettner/wpww-asana-task-creator/)
+- Kontaktieren Sie uns per E-Mail unter [dev@waterproof.agency](mailto:dev@waterproof.agency)
+- Besuchen Sie die [Waterproof Web Wizard GmbH](https://waterproof-web-wizard.de/) Website
+
+## Beitragen
+
+Verbesserungsvorschläge und Pull-Requests sind willkommen! Wenn Sie zum Projekt beitragen möchten:
+
+1. Forken Sie das Repository
+2. Erstellen Sie einen Feature-Branch (`git checkout -b feature/amazing-feature`)
+3. Commiten Sie Ihre Änderungen (`git commit -m 'Add amazing feature'`)
+4. Pushen Sie den Branch (`git push origin feature/amazing-feature`)
+5. Öffnen Sie einen Pull Request
+
+## Lizenz & Copyright
+
+© 2025 [Waterproof Web Wizard GmbH](https://waterproof-web-wizard.de/) | Alle Rechte vorbehalten
+
+Entwickelt von Dennis Hüttner, Waterproof Web Wizard.
+
+Diese Software wird unter den Bedingungen der MIT-Lizenz veröffentlicht.
+
+## Kontakt
+
+Dennis Hüttner - [dev@waterproof.agency](mailto:dev@waterproof.agency)
+
+Website: [https://waterproof-web-wizard.de/](https://waterproof-web-wizard.de/)
+
+Projektlink: [https://github.com/dhuettner/wpww-asana-task-creator](https://github.com/dhuettner/wpww-asana-task-creator)
+
+---
+
+Tags: #asana-task-creator #chrome-extension #project-management #browser-tool #asana-api #task-management #productivity-tool #ticketing-system #wpww
