@@ -43,7 +43,7 @@ Mit dem Beitrag zu diesem Projekt stimmen Sie zu, dass Ihre Beiträge unter ders
 
 ## Fragen?
 
-Bei Fragen können Sie sich jederzeit an [dev@waterproof.agency](mailto:dev@waterproof.agency) wenden oder ein Issue auf GitHub erstellen.
+Bei Fragen können Sie sich jederzeit an [hallo@waterproof.agency](mailto:hallo@waterproof.agency) wenden oder ein Issue auf GitHub erstellen.
 
 Vielen Dank für Ihre Unterstützung!
 
