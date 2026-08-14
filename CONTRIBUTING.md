@@ -49,4 +49,4 @@ Vielen Dank für Ihre Unterstützung!
 
 ---
 
-© 2025 [Waterproof Web Wizard GmbH](https://waterproof-web-wizard.de/) | Alle Rechte vorbehalten
+© 2025 [Waterproof Web Wizard GmbH](https://waterproof.agency/) | Alle Rechte vorbehalten
