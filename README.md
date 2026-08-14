@@ -202,11 +202,11 @@ branch, commit your changes, push the branch and open a pull request.
 
 ---
 
-## Lizenz und Copyright
+## Lizenz
 
-© 2025 [Waterproof Web Wizard GmbH](https://waterproof.agency/) | Alle Rechte vorbehalten
+MIT. Der vollständige Lizenztext steht in [LICENSE](LICENSE).
 
-Diese Software wird unter den Bedingungen der MIT-Lizenz veröffentlicht.
+© 2025 [Waterproof Web Wizard GmbH](https://waterproof.agency/)
 
 <div align="center">
   <br>
